@@ -51,6 +51,7 @@ local servers = {
   cssls = {},
   tailwindcss = {},
   pyright = {},
+  rust_analyzer = {},
   gopls = {
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -108,13 +109,7 @@ vim.list_extend(ensure_installed, {
   { "prettier" },
   { "stylua" },
   { "intelephense" },
-
-  { "codespell" },
   { "pylint" },
-  { "shellcheck" },
-
-  { "delve" },
-  { "debugpy" },
 })
 
 mason_tool_installer.setup({

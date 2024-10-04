@@ -22,16 +22,6 @@ require("lazy").setup({
         colorscheme = "solarized-osaka",
       },
     },
-    -- {
-    --   "folke/tokyonight.nvim",
-    --   lazy = false, -- Load at startup
-    --   priority = 1000, -- Ensure it loads first
-    --   opts = {
-    --     style = "night", -- Use the night style
-    --     transparent = true, -- Enable transparency
-    --     terminal_colors = true, -- Apply transparency to the terminal
-    --   },
-    -- },
     {
       "craftzdog/solarized-osaka.nvim",
       lazy = false,
@@ -44,7 +34,7 @@ require("lazy").setup({
     { import = "plugins" },
     { "lukas-reineke/indent-blankline.nvim", enabled = true },
     { "folke/noice.nvim", enabled = true },
-    -- { "akinsho/bufferline.nvim", enabled = false },
+    -- { "akinsho/bufferline.nvim", enabled = true },
     { "rcarriga/nvim-notify", enabled = false },
     { "glepnir/dashboard-nvim", enabled = false },
     { import = "lazyvim.plugins.extras.formatting.prettier" },

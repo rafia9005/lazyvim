@@ -17,3 +17,5 @@ end, { desc = "Toggle vertical terminal" })
 map({ "n", "i", "t" }, "<A-i>", function()
   require("nvterm.terminal").toggle("float")
 end, { desc = "Toggle floating terminal" })
+
+map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { noremap = true, silent = true })
