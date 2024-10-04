@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 local map = vim.keymap.set
 map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab" })
+map("n", "<C-q>", ":bd<CR>", { desc = "Close buffer", silent = true })
 map("n", "<leader>rn", ":IncRename ")
 
 -- New keymap for terminal toggling
