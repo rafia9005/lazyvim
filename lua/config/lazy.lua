@@ -16,10 +16,34 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "solarized-osaka",
+      },
+    },
+    -- {
+    --   "folke/tokyonight.nvim",
+    --   lazy = false, -- Load at startup
+    --   priority = 1000, -- Ensure it loads first
+    --   opts = {
+    --     style = "night", -- Use the night style
+    --     transparent = true, -- Enable transparency
+    --     terminal_colors = true, -- Apply transparency to the terminal
+    --   },
+    -- },
+    {
+      "craftzdog/solarized-osaka.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {
+        transparent = false,
+      },
+    },
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "plugins" },
-    { "lukas-reineke/indent-blankline.nvim", enabled = false },
-    { "folke/noice.nvim", enabled = false },
+    { "lukas-reineke/indent-blankline.nvim", enabled = true },
+    { "folke/noice.nvim", enabled = true },
     -- { "akinsho/bufferline.nvim", enabled = false },
     { "rcarriga/nvim-notify", enabled = false },
     { "glepnir/dashboard-nvim", enabled = false },
@@ -28,10 +52,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.typescript" },
   },
   defaults = {
-    lazy = false,
+    lazy = true,
     version = false,
   },
-  install = { colorscheme = { "tokyonight-night" } },
   checker = { enabled = false },
   performance = {
     rtp = {

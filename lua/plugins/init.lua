@@ -1,4 +1,5 @@
 return {
+  -- lsp config
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPost", "BufNewFile" },
@@ -12,37 +13,48 @@ return {
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      require("plugins.configs.lspconfig")
+      require("plugins.configs.plugins.lspconfig")
     end,
   },
+  -- nvim tree config
   {
     "kyazdani42/nvim-tree.lua",
     config = function()
-      require("plugins.configs.nvim-tree")
+      require("plugins.configs.plugins.nvim-tree")
     end,
     event = { "BufWinEnter", "BufReadPre" },
   },
+  -- bufferline config
   {
     "akinsho/bufferline.nvim",
     event = "BufReadPre",
     config = function()
-      require("plugins.configs.bufferline")
+      require("plugins.configs.plugins.bufferline")
     end,
   },
+  -- lualine config
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("plugins.configs.lualine")
+      require("plugins.configs.plugins.lualine")
     end,
     event = "VeryLazy",
   },
+  -- telescope config
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("plugins.configs.telescope")
+      require("plugins.configs.plugins.telescope")
+    end,
+  },
+  -- terminal config
+  {
+    "NvChad/nvterm",
+    config = function()
+      require("nvterm").setup()
     end,
   },
 }
